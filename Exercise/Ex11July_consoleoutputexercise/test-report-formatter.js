@@ -21,7 +21,7 @@ let password ;
 
 function login(username,password){
     let status;
-    if((username == "achman.saxena@gmail.com" || username == "%%") && (password =="1234" || password =="" ))
+    if((username === "achman.saxena@gmail.com" || username === "%%") && (password === "1234" || password === "" ))
         status = true ;
     else
         status = false ;

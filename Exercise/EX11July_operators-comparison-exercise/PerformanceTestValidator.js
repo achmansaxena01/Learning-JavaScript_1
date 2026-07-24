@@ -2,7 +2,7 @@ let status = "PASSED";
 let errorCount = 0;
 
 function teststatus(status ,errorCount ){
-    if ((status.toUpperCase() == "PASSED" || status.toUpperCase() == "SKIPPED") && (errorCount == 0))
+    if ((status.toUpperCase() === "PASSED" || status.toUpperCase() === "SKIPPED") && (errorCount === 0))
         console.log("✅ Test completed successfully");
     else
         console.log("❌ Test has issues");

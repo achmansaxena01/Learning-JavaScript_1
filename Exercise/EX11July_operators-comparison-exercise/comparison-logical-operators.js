@@ -5,7 +5,7 @@ for (i=0;i<agearray.length;i++){
     age = agearray[i];
     if(age> 18 && age< 65)
         console.log( age + " Valid (in range)");
-    else if(age == 18 || age == 65)
+    else if(age === 18 || age === 65)
         console.log(age + " Valid (boundary)");
     else if (age < 18)
         console.log(age + " Invalid (too young)");
