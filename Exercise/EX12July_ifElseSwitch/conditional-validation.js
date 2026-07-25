@@ -28,4 +28,20 @@ for (let i = 0; i < testResult.length; i++) {
         console.log("⏳ Test case pending");
 }
 
-consol
+console.log("\n----------------Password Strength Checker:-----------------\n");
+
+let password = "Test@123";
+
+function pswdchecker(password) {
+    if (password.length<6 || password.trim() === "" )
+        console.log("❌ Weak password - too short");
+    else if (password.length < 10)
+        console.log("⚠️ Medium password strength");
+    else
+        console.log("✅ Strong password");
+
+}
+
+pswdchecker("Test");
+pswdchecker("Test@123");
+pswdchecker("Test@12345");
