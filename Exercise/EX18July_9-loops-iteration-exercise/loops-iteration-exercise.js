@@ -104,5 +104,35 @@ console.log("Count of failed test : "+Failed_Tests.length)
 console.log("\n----------------Retry Logic with do...while-----------------\n");
 
 
+console.log("Retry Logic Test Runner");
+console.log("━━━━━━━━━━━━━━━━━━━━━━━");
+let testname = "Login Test"
+let attempts = 0;
+let maxAttempts = 5;
+let testPassed = false ;
+
+function runFlakyTest() {
+       return Math.random() > 0.7;  // 30% success rate
+   }
+
+console.log("Running: "+ testname);
+console.log("Max Attempts : "+maxAttempts);
+
+do{
+attempts++;
+    console.log("Attempt " + attempts + "...");
+    testPassed = runFlakyTest();
+
+    if (testPassed) {
+        console.log("\n✓ Test passed !!!");
+    } else {
+            console.log("✗ Test FAILED");
+        if (attempts < maxAttempts)
+            console.log("Retrying...\n");
+    }
+} while (!testPassed && attempts < maxAttempts);
+
+if (testPassed) console.log("\n✓ Test passed on attempt "+attempts);
+else console.log("✗ Test failed after "+ attempts + " Attempts")
 
 console.log("\n----------------Retry Logic with do...while-----------------\n");
