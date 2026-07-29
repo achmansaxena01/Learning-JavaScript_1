@@ -135,4 +135,3 @@ attempts++;
 if (testPassed) console.log("\n✓ Test passed on attempt "+attempts);
 else console.log("✗ Test failed after "+ attempts + " Attempts")
 
-console.log("\n----------------Retry Logic with do...while-----------------\n");
