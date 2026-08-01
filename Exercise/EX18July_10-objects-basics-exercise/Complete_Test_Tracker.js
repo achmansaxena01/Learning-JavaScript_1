@@ -85,7 +85,6 @@ let testTracker = {
         this.test_result();
         this,this.Statistics();
     }
-
 }
 
 testTracker.consolidation();
