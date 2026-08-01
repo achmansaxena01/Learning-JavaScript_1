@@ -89,7 +89,4 @@ let testTracker = {
 }
 
 testTracker.consolidation();
-//testTracker.suite_information();
-//testTracker.test_result();
-//testTracker.Statistics();
 console.log("------------------------------------------------------------------------")
