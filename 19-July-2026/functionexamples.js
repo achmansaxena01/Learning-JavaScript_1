@@ -99,9 +99,7 @@ function makeValidator(minLength) {
 const normalUser = makeValidator(8);
 
 const adminUser = makeValidator(16);
-function adminUser(password) {
-  return password.length >= 16;
-}
+
 
 let userPassword = "abc@1#weqw";
 let adminPassword = "Ksdheriskfal";
