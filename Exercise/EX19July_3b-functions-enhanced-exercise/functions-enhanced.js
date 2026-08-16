@@ -55,6 +55,43 @@ calling("john", "abc", 25);
 calling("john", "Test@123", 16);
 calling("john", "Test@123", 25);
 
+console.log("\n----------------Exercise 3: Function Expressions - Password Validators-----------------\n");
+
+const hasMinLength = function(password){
+if (password.length>=8)
+    return true;
+else 
+    return false;
+}
+
+const hasSpecialChar = function(password){
+    return /[@!#]/.test(password);
+}
+
+const hasUppercase = function(password){
+    if (/[A-Z]/.test(password))
+        return true;
+    else 
+        return false;
+}
+
+let passwordValidators = [hasMinLength,hasSpecialChar,hasUppercase];
+
+function validatePassword(password){
+    console.log("Validating : "+ password);
+    let flag = true;
+    for(let i = 0 ; i< passwordValidators.length ; i++){
+        if (passwordValidators[i](password) === false ) {
+            return console.log("   ✗ Failed check " +(i+1));
+        }
+        else console.log("   ✓ Passed check " +(i+1));
+            flag = true;       
+    }
+    if (flag === true) console.log("   ✓ Password is valid! \n");
+}
+
+validatePassword("Test@123");
+validatePassword("weak");
 
 
-console.log("\n----------------Exercise 2: Guard Clauses - Form Validator-----------------\n");
+console.log("\n----------------Exercise 3: Function Expressions - Password Validators-----------------\n");
