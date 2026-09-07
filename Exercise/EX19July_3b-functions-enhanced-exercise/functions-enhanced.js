@@ -92,6 +92,27 @@ function validatePassword(password){
 
 validatePassword("Test@123");
 validatePassword("weak");
+validatePassword("w#eakingS");
 
 
-console.log("\n----------------Exercise 3: Function Expressions - Password Validators-----------------\n");
+console.log("\n----------------Exercise 4: Factory Functions - URL Builder-----------------\n");
+
+function makeUrlBuilder(baseUrl){
+    return function (path) {
+        return baseUrl + path ;
+    };
+}
+
+const stagingUrl = makeUrlBuilder("https://staging.example.com");
+const productionUrl = makeUrlBuilder("https://example.com");
+let login = "/login";
+let dashboard = "/dashboard";
+console.log("Staging URLs: ");
+console.log(" " , stagingUrl(login));
+console.log(" " , stagingUrl(dashboard));
+console.log("Production URLs: ");
+console.log(" " , productionUrl(login));
+console.log(" " , productionUrl(dashboard));
+
+
+console.log("\n----------------Exercise 4: Factory Functions - URL Builder-----------------\n");

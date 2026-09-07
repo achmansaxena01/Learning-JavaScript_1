@@ -9,6 +9,7 @@ function makeValidator(minLength) {
 function add(a, b) {
   return a + b;
 }
+
 normalUser("abf@asda");
 normalUser("asda");
 normalUser = makeValidator(8);
