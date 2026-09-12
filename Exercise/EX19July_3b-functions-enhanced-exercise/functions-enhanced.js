@@ -115,4 +115,31 @@ console.log(" " , productionUrl(login));
 console.log(" " , productionUrl(dashboard));
 
 
-console.log("\n----------------Exercise 4: Factory Functions - URL Builder-----------------\n");
+console.log("\n----------------Challenge: Configurable Validator Factory-----------------\n");
+
+function makeUserValidator(minPasswordLength = 8, minAge = 18) {
+    return function (username, password, age){
+        if (username === "") 
+            return "❌ Username cannot be empty";
+        if (username.length < 3) 
+            return "❌ Username cannot be smaller than 3 characters";
+        if (username.length > 20) 
+            return "❌ Username cannot be greater than 20 charaters ";
+        if (age < minAge ) 
+            return "❌ Too young";
+        if (password.length < minPasswordLength ) 
+            return `❌ Password too short (min ${minPasswordLength} characters, current: ${password.length})`;
+        else return "✅ Valid user";
+    }
+}
+
+const standardValidator = makeUserValidator();
+const strictValidator   = makeUserValidator(12, 21);
+
+// Test standard
+console.log(standardValidator("testuser", "Test@123", 25));
+console.log(standardValidator("", "Test@123", 25));
+
+// Test strict (password "Test@123" is only 8 chars — fails strict)
+console.log(strictValidator("testuser", "Test@123", 25));
+console.log(strictValidator("testuser", "Test@123Secure!", 25));
