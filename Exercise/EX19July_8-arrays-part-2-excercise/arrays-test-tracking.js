@@ -85,8 +85,15 @@ let smokeTests = [];
 smokeTests = testSuite.slice(0,3);
 console.log(`Smoke tests only (first 3):  ${smokeTests}`);
 
+let regressionTests = [];
+regressionTests = testSuite.slice(-3);
+console.log(`Regression tests only (last 3): ${regressionTests}`);
+console.log(`\nFull copy: ${testSuite}`);
 
-console.log(`Regression tests only (last 3): `);
-console.log(`Full copy: ${testSuite}`);
+let Middle = [];
+Middle = testSuite.slice(2,5);
+console.log(`Regression tests only (last 3): ${regressionTests}`);
+console.log(`\nFull copy: ${testSuite}`);
+Middle tests (index 2-5): 
 
 
